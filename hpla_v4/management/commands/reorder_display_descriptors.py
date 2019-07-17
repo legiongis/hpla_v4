@@ -58,9 +58,10 @@ class Command(BaseCommand):
         )
 
         resources = Resource.objects.filter(graph_id=descriptor_function.graph_id)
-        print resources.count(), "resources to process"
+        totalct = resources.count()
+        print totalct, "resources to process"
 
-        for resource in resources:
+        for n, resource in enumerate(resources):
             
             self.process_resource(resource, descriptor_function.config,
                 nametype=nametype_value,
@@ -68,6 +69,10 @@ class Command(BaseCommand):
                 popuptype=popuptype_value
             )
             
+            if n+1 % 1000 == 0:
+                print n+1,
+            if n+1 == totalct:
+                print n+1
 
     def process_resource(self, resource, config, nametype=None, desctype=None, popuptype=None):
 

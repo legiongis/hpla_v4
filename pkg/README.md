@@ -1,1 +1,0 @@
-# arches-v4-hip-pkg

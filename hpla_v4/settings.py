@@ -34,6 +34,8 @@ ROOT_URLCONF = 'hpla_v4.urls'
 # a prefix to append to all elasticsearch indexes, note: must be lower case
 ELASTICSEARCH_PREFIX = 'hpla_v4'
 
+ARCHES_NAMESPACE_FOR_DATA_EXPORT = "http://www.historicplacesla.org/rdm/"
+
 DATABASES = {
     "default": {
         "ATOMIC_REQUESTS": False,

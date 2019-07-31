@@ -69,7 +69,7 @@ class Command(BaseCommand):
                 popuptype=popuptype_value
             )
             
-            if n+1 % 1000 == 0:
+            if (n+1) % 1000 == 0:
                 print n+1,
             if n+1 == totalct:
                 print n+1
@@ -80,7 +80,7 @@ class Command(BaseCommand):
         if nametype is not None:
             self.reorder_tiles(resid, config['name']['nodegroup_id'], nametype)
         if desctype is not None:
-            self.reorder_tiles(resid, config['decription']['nodegroup_id'], desctype)
+            self.reorder_tiles(resid, config['description']['nodegroup_id'], desctype)
         if popuptype is not None:
             self.reorder_tiles(resid, config['map_popup']['nodegroup_id'], popuptype)
 

@@ -14,7 +14,7 @@ except ImportError:
 INSTALLED_APPS += ("hpla_v4",)
 
 APP_ROOT = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-PACKAGE_DIR = os.path.join(os.path.dirname(APP_ROOT),'pkg')
+
 STATICFILES_DIRS =  (os.path.join(APP_ROOT, 'media'),) + STATICFILES_DIRS
 
 DATATYPE_LOCATIONS.append('hpla_v4.datatypes')

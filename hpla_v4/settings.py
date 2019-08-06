@@ -68,14 +68,38 @@ STATIC_ROOT = '/var/www/media'
 
 RESOURCE_IMPORT_LOG = os.path.join(APP_ROOT, 'logs', 'resource_import.log')
 
-LOGGING = {   'disable_existing_loggers': False,
-    'handlers': {   'file': {   'class': 'logging.FileHandler',
-                                'filename': os.path.join(APP_ROOT, 'arches.log'),
-                                'level': 'DEBUG'}},
-    'loggers': {   'arches': {   'handlers': [   'file'],
-                                 'level': 'DEBUG',
-                                 'propagate': True}},
-    'version': 1}
+LOGGING = {
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console_output': {
+            'class': 'logging.StreamHandler',
+            'level': 'DEBUG'
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(APP_ROOT, 'arches.log'),
+            'level': 'DEBUG'
+        },
+        'import_errors_file': {
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(APP_ROOT, 'logs', 'import_log2.log'),
+            'level': 'DEBUG'
+        }
+    },
+    'loggers': {
+        'arches': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True
+        },
+        'import_log2': {
+            'handlers': ['import_errors_file', 'console_output'],
+            'level': 'DEBUG',
+            'propagate': True
+        }
+    },
+    'version': 1
+}
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 

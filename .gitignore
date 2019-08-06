@@ -4,6 +4,7 @@ package_settings.py
 settings_local.py
 hpla_v4/media/packages
 hpla_v4/node_modules
+logs
 
 
 

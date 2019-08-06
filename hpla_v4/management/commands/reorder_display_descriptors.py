@@ -80,7 +80,7 @@ class Command(BaseCommand):
         if nametype is not None:
             self.reorder_tiles(resid, config['name']['nodegroup_id'], nametype)
         if desctype is not None:
-            self.reorder_tiles(resid, config['decription']['nodegroup_id'], desctype)
+            self.reorder_tiles(resid, config['description']['nodegroup_id'], desctype)
         if popuptype is not None:
             self.reorder_tiles(resid, config['map_popup']['nodegroup_id'], popuptype)
 
